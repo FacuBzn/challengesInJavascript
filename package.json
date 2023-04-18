@@ -1,0 +1,16 @@
+{
+  "name": "challenge01",
+  "version": "1.0.0",
+  "description": "challenge 01 de Leet code",
+  "main": "challenge01.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node challenge01.js"
+  },
+  "author": "FacuBzn",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "nodemon": "^2.0.22"
+  }
+}
