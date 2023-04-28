@@ -5,7 +5,7 @@
   "main": "challenge01.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node challenge02.js"
+    "start": "node challenge03.js"
   },
   "author": "FacuBzn",
   "license": "ISC",
