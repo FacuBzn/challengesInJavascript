@@ -1,53 +1,49 @@
 # challengesInJavascript
 
-There are n kids with candies. You are given an integer array candies, where each candies[i] represents the number 
-of candies the ith kid has, and an integer extraCandies, denoting the number of extra candies that you have.
-Return a boolean array result of length n, where result[i] is true if, after giving the ith kid all the extraCandies, 
-they will have the greatest number of candies among all the kids, or false otherwise.
-Note that multiple kids can have the greatest number of candies.
+Given two 0-indexed integer arrays nums1 and nums2, return a list answer of size 2 where:
+
+answer[0] is a list of all distinct integers in nums1 which are not present in nums2.
+answer[1] is a list of all distinct integers in nums2 which are not present in nums1.
+Note that the integers in the lists may be returned in any order.
+
+ 
 
 Example 1:
 
-Input: candies = [2,3,5,1,3], extraCandies = 3
-Output: [true,true,true,false,true] 
-Explanation: If you give all extraCandies to:
-- Kid 1, they will have 2 + 3 = 5 candies, which is the greatest among the kids.
-- Kid 2, they will have 3 + 3 = 6 candies, which is the greatest among the kids.
-- Kid 3, they will have 5 + 3 = 8 candies, which is the greatest among the kids.
-- Kid 4, they will have 1 + 3 = 4 candies, which is not the greatest among the kids.
-- Kid 5, they will have 3 + 3 = 6 candies, which is the greatest among the kids.
+Input: nums1 = [1,2,3], nums2 = [2,4,6]
+Output: [[1,3],[4,6]]
+Explanation:
+For nums1, nums1[1] = 2 is present at index 0 of nums2, whereas nums1[0] = 1 and nums1[2] = 3 are not present in nums2. Therefore, answer[0] = [1,3].
+For nums2, nums2[0] = 2 is present at index 1 of nums1, whereas nums2[1] = 4 and nums2[2] = 6 are not present in nums2. Therefore, answer[1] = [4,6].
 Example 2:
 
-Input: candies = [4,2,1,1,2], extraCandies = 1
-Output: [true,false,false,false,false] 
-Explanation: There is only 1 extra candy.
-Kid 1 will always have the greatest number of candies, even if a different kid is given the extra candy.
-Example 3:
-
-Input: candies = [12,1,12], extraCandies = 10
-Output: [true,false,true]
+Input: nums1 = [1,2,3,3], nums2 = [1,1,2,2]
+Output: [[3],[]]
+Explanation:
+For nums1, nums1[2] and nums1[3] are not present in nums2. Since nums1[2] == nums1[3], their value is only included once and answer[0] = [3].
+Every integer in nums2 is present in nums1. Therefore, answer[1] = [].
+ 
 
 Constraints:
 
-n == candies.length
-2 <= n <= 100
-1 <= candies[i] <= 100
-1 <= extraCandies <= 50
+1 <= nums1.length, nums2.length <= 1000
+-1000 <= nums1[i], nums2[i] <= 1000
 
+### Explicacion de la Resolucion:
+Esta función recibe dos matrices de números enteros, nums1 y nums2, y devuelve una lista con dos elementos. El primer elemento de la lista contiene todos los números que están en nums1 pero no en nums2, mientras que el segundo elemento contiene todos los números que están en nums2 pero no en nums1.
+Ahora, paso a explicar el código:
+* La función findDifference toma como parámetros dos matrices de enteros, nums1 y nums2.
+* Las variables onlyInNums1 y onlyInNums2 se inicializan como arreglos vacíos que contienen los números que están solo en nums1 y los números que están solo en nums2, respectivamente.
+* El primer ciclo for recorre cada número en nums1 utilizando un for...of loop. Si el número no se encuentra en nums2 y tampoco está en onlyInNums1, se agrega a onlyInNums1.
+* El segundo ciclo for es similar al primero, pero recorre cada número en nums2 en lugar de nums1. Si el número no se encuentra en nums1 y tampoco está en onlyInNums2, se agrega a onlyInNums2.
+* Finalmente, la función devuelve un arreglo que contiene onlyInNums1 y onlyInNums2.
 
-****Explicación de Resolucion:
-
-Primero, obtenemos el número máximo de dulces usando Math.max(...candies) y lo guardamos en la variable maxCandies.
-Luego, usamos el método map() en el arreglo candies para crear un nuevo arreglo result donde cada elemento es un booleano 
-que indica si ese niño tendrá el número máximo de dulces después de agregarle los extraCandies.
-Para determinar si un niño tendrá el número máximo de dulces después de agregarle los extraCandies, 
-comparamos su cantidad de dulces actual más extraCandies con maxCandies. Si el resultado es mayor o igual a maxCandies, 
-el niño tendrá el número máximo de dulces y guardamos true en el arreglo result, de lo contrario, guardamos false.
-Finalmente, retornamos el arreglo result.
+En resumen, esta función toma dos arreglos de números y crea dos nuevos arreglos que contienen los números que no se encuentran en ambos arreglos. Es importante destacar que la función no modifica los arreglos de entrada originales, sino que crea nuevos arreglos.
 
 
 
-![image](https://user-images.githubusercontent.com/33848453/232870459-c2e9154a-f775-4c9d-aa10-36ecbe940763.png)
+![image](https://user-images.githubusercontent.com/33848453/236262664-b234e199-8534-4585-8003-95272e3ec9d6.png)
+
 
 
 
