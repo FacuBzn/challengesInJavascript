@@ -1,11 +1,11 @@
 {
-  "name": "challenge01",
+  "name": "challenge04",
   "version": "1.0.0",
-  "description": "challenge 01 de Leet code",
-  "main": "challenge01.js",
+  "description": "challenge 04 de Leet code",
+  "main": "challenge04.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node challenge03.js"
+    "start": "node challenge04.js"
   },
   "author": "FacuBzn",
   "license": "ISC",
